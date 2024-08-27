@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    font-family: "Baskervville SC", "Bungee Tint", "DM Serif Text", "Matemasie", sans-serif, serif;
+    background-color: #8bf54e;
+    color: #FFA300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    cursor: none;
+}
+
+.ScoreBox{
+    padding-top: 2%;
+    font-size: 2.7em;
+    font-family: "Bungee Tint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.GameBoard{
+    height: 600px;
+    width: 600px;
+    /* border: 2.5px solid #ff0000; */
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 7%;
+}
+
+.Holes{
+    position: relative;
+    background-color: #FFA300;
+    border-radius: 50%;
+    box-shadow: inset 0 7px 0px 7px #FFEC04;
+    overflow: hidden;
+}
+
+.Holes .Mole{
+    position: absolute;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    animation: moleUp .2s ease-out;
+}
+
+@keyframes moleUp {
+    0%{
+        transform: translateX(-50%) translateY(100%);
+    }
+
+    100%{
+        transform: translateX(-50%) translateY(0%);
+    }
+}
+
+.cursor{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    /* top: 100px;
+    left: 100px; */
+    background-image: url('assests/Hammer.png');
+    background-size: 100% 100%;
+    transform: translate(-30%, -30%);
+    transition: transform .1s;
+    pointer-events: none;
+}
+
+.cursor.clicked{
+    transform: translate(-30%, -30%) rotate(-45deg);
+}
+
+
+.Level-Page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Screen-Popup {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.Level-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
